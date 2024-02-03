@@ -14,14 +14,22 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error('Failed to write file:', err);
+    } else {
+      console.log(`${fileName} was successfully created.`);
+    }
+  });
+}
 
 // TODO: Create a function to initialize app
 //moved then and catch block into init function
 function init() {
   inquirer.prompt(questions)
     .then((responses) => {
-      //use generateMarkdown importto create markdown string
+      //use generateMarkdown import to create markdown string
       const markdownContent = generateMarkdown(responses);
       //call writeToFile function using name and data 
       writeToFile('README.md', markdownContent);
