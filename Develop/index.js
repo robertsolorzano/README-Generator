@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
@@ -52,23 +51,23 @@ const questions = [
   },
 ];
 
+//writes data to a file within the file path, creating the file if it doesn't exist, then logs to terminal
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
+  const filePath = `./Develop/output/${fileName}`;
+  fs.writeFile(filePath, data, (err) => {
     if (err) {
       console.error('Failed to write file:', err);
     } else {
-      console.log(`${fileName} was successfully created.`);
+      console.log(`${fileName} was successfully created in the output directory.`);
     }
   });
 }
 
-//moved then and catch block into init function
+//initializes the application 
 function init() {
   inquirer.prompt(questions)
     .then((responses) => {
-      //use generateMarkdown import to create markdown string
       const markdownContent = generateMarkdown(responses);
-      //call writeToFile function using name and data 
       writeToFile('README.md', markdownContent);
     })
     .catch((error) => {
