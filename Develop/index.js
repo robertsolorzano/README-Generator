@@ -13,20 +13,23 @@ const questions = [
     //need to add more questions later
 ];
 
-inquirer.prompt(questions)
-  .then((responses) => {
-    console.log('User Responses: ', responses);
-    writeToFile();//need to make this function and arguments
-  })
-  .catch((error) => {
-    console.error('An error occured:', error);
-  });
-
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+//moved then and catch block into init function
+function init() {
+  inquirer.prompt(questions)
+    .then((responses) => {
+      //use generateMarkdown importto create markdown string
+      const markdownContent = generateMarkdown(responses);
+      //call writeToFile function using name and data 
+      writeToFile('README.md', markdownContent);
+    })
+    .catch((error) => {
+      console.error('An error occurred:', error);
+    });
+}
 
 // Function call to initialize app
 init();
