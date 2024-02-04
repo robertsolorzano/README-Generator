@@ -1,9 +1,20 @@
 //function to create license badge if user selected 
 function renderLicenseBadge(license) {
+  const licenseColors = {
+    MIT: 'blue',
+    'GNU GPL v3': 'green',
+    'Apache License 2.0': 'orange',
+    ISC: 'yellow',
+    None: 'red',
+  };
+
   if (!license || license === 'None') {
     return '';
   }
-  return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
+  //replace spaces in license name with URL-encoded spaces (%20)
+  const licenseParam = license.replace(/ /g, '%20');
+  const color = licenseColors[license];
+  return `![License](https://img.shields.io/badge/License-${licenseParam}-${color}.svg)`;
 }
 
 //function to create license link based on user input

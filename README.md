@@ -12,6 +12,7 @@ A command-line application that accepts user input, creating a professional READ
 - [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
+- [Credits](#credits)
 
 ## Installation
 
@@ -41,3 +42,13 @@ For any questions, please contact me at [robertsolorzano510@gmail.com](mailto:ro
 
 This project is licensed under the MIT license. For more information, see [here](https://opensource.org/licenses/MIT).
   
+## Credits
+
+### Source Code for Project Assignment
+
+- [potential-enigma](https://github.com/coding-boot-camp/potential-enigma)
+
+### Regular Expression code reference 
+
+- [Building a regular expression for email validation](https://saturncloud.io/blog/how-can-i-validate-an-email-address-using-a-regular-expression/#building-a-regular-expression-for-email-validation) seen in line 69 of index.js
+
