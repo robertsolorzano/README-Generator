@@ -52,3 +52,7 @@ This project is licensed under the MIT license. For more information, see [here]
 
 - [Building a regular expression for email validation](https://saturncloud.io/blog/how-can-i-validate-an-email-address-using-a-regular-expression/#building-a-regular-expression-for-email-validation) seen in line 69 of index.js
 
+### Inquirer Documentation
+
+- [Inquirer NPM Package](https://www.npmjs.com/package/inquirer/v/8.2.4) - Used for creating interactive command-line interfaces.
+
