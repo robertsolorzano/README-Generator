@@ -7,11 +7,25 @@ const questions = [
     type: 'input',
     name: 'title',
     message: 'What is the name of this project?',
+    validate: function (input) {
+      if (input.trim() !== '') {
+        return true;
+      } else {
+        return 'Please enter a project name.';
+      }
+    },
   },
   {
     type: 'input',
     name: 'description',
     message: 'Please provide a brief description of your project:',
+    validate: function (input) {
+      if (input.trim() !== '') {
+        return true;
+      } else {
+        return 'Please provide a project description.';
+      }
+    },
   },
   {
     type: 'input',
@@ -48,6 +62,14 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'What is your email address?',
+    validate: function (input) {
+      const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+      if (emailRegex.test(input)) {
+        return true;
+      } else {
+        return 'Please enter a valid email address.';
+      }
+    },
   },
 ];
 
