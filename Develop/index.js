@@ -7,6 +7,7 @@ const questions = [
     type: 'input',
     name: 'title',
     message: 'What is the name of this project?',
+    //prevents user entering empty string
     validate: function (input) {
       if (input.trim() !== '') {
         return true;
@@ -19,6 +20,7 @@ const questions = [
     type: 'input',
     name: 'description',
     message: 'Please provide a brief description of your project:',
+    //prevents user entering empty string
     validate: function (input) {
       if (input.trim() !== '') {
         return true;
@@ -62,6 +64,7 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'What is your email address?',
+    //prevents user entering invalid email
     validate: function (input) {
       const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
       if (emailRegex.test(input)) {
